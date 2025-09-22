@@ -10,8 +10,9 @@
 name: Engineering
 policies:
   - path: ../lib/macos/policies/macos-device-health.policies.yml
-  - path: ../lib/windows/policies/windows-device-health.policies.yml
   - path: ../lib/linux/policies/linux-device-health.policies.yml
+  - path: ../lib/windows/policies/windows-device-health.policies.yml
+  - path: ../lib/windows/policies/all-windows-updates-installed.policies.yml
 queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
   - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
@@ -31,9 +32,14 @@ controls:
     - path: ../lib/macos/scripts/set-timezone.script.sh
     - path: ../lib/windows/scripts/set-wallpaper.ps1
 team_settings:
+  webhook_settings:
+    failing_policies_webhook: true
+    destination_url: https://webhook.site/00332dcf-56dd-4faf-ac34-fd371401cccb
+    host_batch_size: 0
+    policy_ids: 
   secrets:
     - secret: "$FLEET_ENGINEERING_ENROLL_SECRET"
-  features:
+  features: 
     enable_host_users: true
     enable_software_inventory: true
 software:
