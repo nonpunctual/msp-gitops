@@ -36,10 +36,11 @@ team_settings:
     failing_policies_webhook: true
     destination_url: https://webhook.site/00332dcf-56dd-4faf-ac34-fd371401cccb
     host_batch_size: 0
-    policy_ids: 
+    policy_ids: [71,72]
   secrets:
     - secret: "$FLEET_ENGINEERING_ENROLL_SECRET"
   features: 
     enable_host_users: true
     enable_software_inventory: true
 software:
+  packages: ../lib/macos/software/zoom.yml
