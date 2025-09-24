@@ -21,7 +21,7 @@ agent_options:
 controls:
   ipados_updates:
     deadline: "2025-09-30"
-    minimum_version: "26.0"
+    minimum_version: "25.0"
   enable_disk_encryption: true
   macos_settings:
     custom_settings:
