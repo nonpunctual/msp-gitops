@@ -33,9 +33,9 @@ queries:
   - path: ../lib/all/queries/collect-usb-devices.queries.yml
   - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
 software:
-  packages: 
-    - path: ../lib/macos/software/zoom.yml
+  packages:
     - path: ../lib/windows/software/cloudflare-warp.yml
+    - path: ../lib/macos/software/zoom.yml
 agent_options:
   path: ../lib/agent-options.yml
 team_settings:
