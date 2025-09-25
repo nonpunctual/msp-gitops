@@ -19,6 +19,7 @@ controls:
     minimum_version: "26.0"
   scripts:
     - path: ../lib/macos/scripts/remove-zoom-artifacts.script.sh
+    - path: ../lib/macos/scripts/set-dns-cloudflare.sh
     - path: ../lib/macos/scripts/set-timezone.script.sh
 policies:
   - path: ../lib/macos/policies/dns-resolvers.policies.yml
