@@ -8,8 +8,6 @@
 # The secret name in the YAML file must match the secret name in GitHub Actions secrets.
 
 name: Engineering
-agent_options:
-  path: ../lib/agent-options.yml
 controls:
   enable_disk_encryption: true
   ipados_updates:
@@ -26,6 +24,20 @@ controls:
     - path: ../lib/macos/scripts/remove-zoom-artifacts.script.sh
     - path: ../lib/macos/scripts/set-timezone.script.sh
     - path: ../lib/windows/scripts/set-wallpaper.ps1
+policies:
+  - path: ../lib/macos/policies/macos-device-health.policies.yml
+  - path: ../lib/linux/policies/linux-device-health.policies.yml
+  - path: ../lib/windows/policies/windows-device-health.policies.yml
+  - path: ../lib/windows/policies/all-windows-updates-installed.policies.yml
+queries:
+  - path: ../lib/all/queries/collect-usb-devices.queries.yml
+  - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
+software:
+  packages: 
+    - path: ../lib/macos/software/zoom.yml
+    - path: ../lib/windows/software/cloudflare-warp.yml
+agent_options:
+  path: ../lib/agent-options.yml
 team_settings:
   features: 
     enable_host_users: true
@@ -40,15 +52,3 @@ team_settings:
       policy_ids:
         - 71
         - 72
-policies:
-  - path: ../lib/macos/policies/macos-device-health.policies.yml
-  - path: ../lib/linux/policies/linux-device-health.policies.yml
-  - path: ../lib/windows/policies/windows-device-health.policies.yml
-  - path: ../lib/windows/policies/all-windows-updates-installed.policies.yml
-queries:
-  - path: ../lib/all/queries/collect-usb-devices.queries.yml
-  - path: ../lib/all/queries/collect-failed-login-attempts.queries.yml
-software:
-  packages: 
-    - path: ../lib/macos/software/zoom.yml
-    - path: ../lib/windows/software/cloudflare-warp.yml
