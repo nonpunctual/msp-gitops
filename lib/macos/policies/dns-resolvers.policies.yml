@@ -5,4 +5,4 @@
   query: SELECT 1 FROM dns_resolvers WHERE type='nameserver' AND address = '1.1.1.1'
   resolution: Change the DNS resolver to Cloudflare at 1.1.1.1
   run_script:
-    path: ../lib/macos/scripts/set-dns-cloudflare.sh
+    path: ../scripts/set-dns-cloudflare.sh
