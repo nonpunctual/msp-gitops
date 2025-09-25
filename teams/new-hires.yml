@@ -1,3 +1,4 @@
+
 # Teams are available in Fleet Premium.
 
 # This file updates policies, queries, agent options, controls, and software for hosts assigned to the "Workstations" team.
@@ -8,8 +9,6 @@
 # The secret name in the YAML file must match the secret name in GitHub Actions secrets.
 
 name: New Hires
-agent_options:
-  path: ../lib/agent-options.yml
 controls:
   macos_settings:
     custom_settings:
@@ -32,6 +31,8 @@ queries:
 software:
   pacakges:
     - path: ../lib/macos/software/zoom.yml
+agent_options:
+  path: ../lib/agent-options.yml
 team_settings:
   secrets:
     - secret: "$FLEET_NEW_HIRES_ENROLL_SECRET"
