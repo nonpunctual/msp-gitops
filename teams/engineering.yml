@@ -37,7 +37,9 @@ team_settings:
       enable_failing_policies_webhook: true
       destination_url: https://webhook.site/00332dcf-56dd-4faf-ac34-fd371401cccb
       host_batch_size: 0
-      policy_ids: 71
+      policy_ids:
+        - 71
+        - 72
 policies:
   - path: ../lib/macos/policies/macos-device-health.policies.yml
   - path: ../lib/linux/policies/linux-device-health.policies.yml
